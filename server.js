@@ -14,7 +14,13 @@ app.set('views', './views')
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Hey', message: `Hello there! ${os.platform()} ${os.release()}` })
+  res.render('index', { 
+    title: 'Hey', 
+    os_info: `${os.platform()} ${os.release()}`,
+    candidate_name: 'Azraai Baharin',
+    date_start_trial: new Date(2021, 12, 13).toDateString(),
+    date_current: new Date().toDateString()
+  })
 });
 
 app.listen(PORT, HOST);
