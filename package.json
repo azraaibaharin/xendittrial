@@ -5,9 +5,10 @@
     "author": "Azraai Baharin <azraai@xendit.co>",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "node server.js"
     },
     "dependencies": {
-      "express": "^4.16.1"
+        "express": "^4.16.1",
+        "pug": "^3.0.2"
     }
-  }
+}
