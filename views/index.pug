@@ -3,9 +3,15 @@ html
     title= title
   body
     body
-    h1 Hello there!
+    h1 Hello there!    
     #container.col
+    if error
+      p. 
+        Something went wrong! #{error}.
+    else
       p.
-        The OS version is #{os_info}.
+        The OS version is: #{os_version}.
       p.
-        Xendit - Trial - #{candidate_name} - #{date_start_trial} - #{date_current}
+        Xendit Trial: #{candidate_name}, Start date: #{date_start_trial}, Current date: #{date_current}
+      p.
+        System Usage: CPU: #{usage_cpu}, Memory: #{usage_mem}
