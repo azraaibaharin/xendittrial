@@ -1,17 +1,52 @@
-html
-  head
-    title= title
-  body
+//- html
+//-   head
+//-     title= title
+//-   body
+//-     body
+//-     h1 Hello there!    
+//-     #container.col
+//-     if error
+//-       p. 
+//-         Something went wrong! #{error}.
+//-     else
+//-       p.
+//-         The OS version is: #{os_version}.
+//-       p.
+//-         Xendit Trial: #{candidate_name}, Start date: #{date_start_trial}, Current date: #{date_current}
+//-       p.
+//-         System Usage: CPU: #{usage_cpu}, Memory: #{usage_mem}
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css")
+        title
+            | Xendit Trial application
     body
-    h1 Hello there!    
-    #container.col
-    if error
-      p. 
-        Something went wrong! #{error}.
-    else
-      p.
-        The OS version is: #{os_version}.
-      p.
-        Xendit Trial: #{candidate_name}, Start date: #{date_start_trial}, Current date: #{date_current}
-      p.
-        System Usage: CPU: #{usage_cpu}, Memory: #{usage_mem}
+        div.container
+            div.row
+                div.col
+                    h1
+                        | Xendit Trial
+            if error 
+                div.row
+                    div.col
+                        p
+                            | Unable to display page: #{error}
+            else
+                div.row
+                    div.col
+                        ol
+                            //- li A quick and dirty site showing how you can use Express, Pug and Bootstrap to write flat site content.
+                            li The OS version which this application runs on is #{os_version}.
+                            li The candidate name is #{name}. The trial starts on: #{date_start}. Current date is: #{date_curr}.
+                            li Current system usage, CPU: #{usage_cpu} and Memory: #{usage_mem}
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js")
