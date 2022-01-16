@@ -8,10 +8,12 @@
         "start": "node server.js"
     },
     "dependencies": {
+        "@elastic/elasticsearch": "^7.16.0",
         "date-and-time": "^2.1.0",
         "express": "^4.16.1",
         "os-utils": "^0.0.14",
         "pug": "^3.0.2",
-        "winston": "^3.4.0"
+        "winston": "^3.4.0",
+        "winston-elasticsearch": "^0.16.0"
     }
 }

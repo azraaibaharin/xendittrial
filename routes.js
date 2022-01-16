@@ -29,4 +29,8 @@ router.get('/error', function(req, res, next) {
     return next(new Error('Opps something went wrong!'));
 });
 
+router.get('/health', function(req, res, next) {
+    return res.status(200).send('OK')
+});
+
 module.exports = router;
