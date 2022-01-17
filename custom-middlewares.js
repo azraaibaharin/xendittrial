@@ -1,6 +1,7 @@
 'use strict';
 
-const logger = require('./logger.js');
+var os = require('os');
+var logger = require('./logger.js');
 
 function requestLogger(req, res, next) {
     logger.access.debug(`Received ${req.method} - ${req.path}.`)
@@ -14,6 +15,7 @@ function errorLogger(error, req, res, next) {
 
 function errorResponder(error, req, res, next) {
     res.render('index', {
+        hostname: os.hostname(),
         error: error
     })
 }

@@ -5,7 +5,7 @@ const { combine, timestamp, json } = format;
 const { File, Console } = transports;
 const { ElasticsearchTransport } = require('winston-elasticsearch');
 const { Client } = require('@elastic/elasticsearch')
-const client = new Client({ node: 'http://localhost:9200' })
+const client = new Client({ node: process.env.ELASTICSEARCH_HOSTS })
 
 // logger for access
 var access = createLogger({

@@ -12,8 +12,9 @@ const date_format = 'YYYY/MM/DD';
 router.get('/', function(req, res, next) {
     osutils.cpuUsage(function(v) {
         res.render('index', { 
+            hostname: os.hostname(),
             // version 1: Print OS version
-            os_version: `${os.version}`,
+            os_version: os.version(),
             // version 2: Print trial candidate name, start date and current date
             name: 'Azraai Baharin',
             date_start: date.format(new Date('January 13, 2022'), date_format),
