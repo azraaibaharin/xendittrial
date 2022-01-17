@@ -2,16 +2,24 @@ version: '2'
 services:
   elasticsearch:
     image: "docker.elastic.co/elasticsearch/elasticsearch:7.16.3"
+    environment:
+      - discovery.type=single-node
+    # volumes:
+    #   - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - "9200:9200"
   kibana:
     image: "docker.elastic.co/kibana/kibana:7.16.3"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     # volumes:
-    #   - ./kibana.yaml:/usr/share/kibana/config/kibana.yml
+    #   - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
     ports:
       - "5601:5601"
   webapp:
-    image: "azraaibaharin/xendittrial:latest"
+    image: "docker.io/azraaibaharin/xendittrial:v3.0"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     ports:
       - "49160:8080"
 

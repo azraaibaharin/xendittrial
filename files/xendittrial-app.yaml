@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: xendittrial-app
-  namespace: xendittrial
+  # namespace: xendittrial
   labels:
     app: xendittrial-app
 spec:
@@ -17,14 +17,14 @@ spec:
     spec:
       containers:
       - name: xendittrial-app
-        image: azraaibaharin/xendittrial:v0.1
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: docker.io/azraaibaharin/xendittrial:v1.0
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "250m"
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
         env:
         - name: ELASTICSEARCH_HOSTS
           value: "http://elasticsearch-svc:9200"
@@ -35,7 +35,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: xendittrial-app-svc
-  namespace: xendittrial
+  # namespace: xendittrial
 spec:
   type: NodePort
   selector:
