@@ -16,9 +16,9 @@ router.get('/', function(req, res, next) {
             // version 1: Print OS version
             os_version: os.version(),
             // version 2: Print trial candidate name, start date and current date
-            // name: 'Azraai Baharin',
-            // date_start: date.format(new Date('January 13, 2022'), date_format),
-            // date_curr: date.format(new Date(), date_format),
+            name: 'Azraai Baharin',
+            date_start: date.format(new Date('January 13, 2022'), date_format),
+            date_curr: date.format(new Date(), date_format),
             // version 3: Print CPU and memory usage
             // usage_cpu: `${(v).toFixed(2)} %`,
             // usage_mem: `${(100 - osutils.freememPercentage()).toFixed(2)} %`
